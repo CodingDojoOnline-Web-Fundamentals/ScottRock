@@ -1,0 +1,59 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+div#container {
+  width: 950px;
+}
+
+  div#entry-form {
+    display: inline-block;
+    vertical-align: top;
+    width: 400px;
+    padding: 20px;
+  }
+
+    div#entry-form * {
+      font-size: 1rem;
+      margin: 10px;
+    }
+
+    div#entry-form label {
+      display: block;
+      vertical-align: top;
+    }
+
+    div#entry-form textarea {
+      display: block;
+      width: 255px;
+      height: 100px;
+    }
+
+div#cards {
+  display: inline-block;
+  vertical-align: top;
+  width: 475px;
+  padding: 10px;
+}
+
+.contact {
+  width: 450px;
+  margin: 10px;
+  border: 1px solid black;
+  text-align: center;
+}
+
+  .contact h2 {
+    margin: 15px;
+  }
+
+.clickme {
+  margin: 10px;
+}
+
+.desc {
+  display: none;
+  margin: 10px;
+}

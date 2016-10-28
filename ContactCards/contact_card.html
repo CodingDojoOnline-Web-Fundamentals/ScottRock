@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>The Coding dojo contacts page</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+        $('#add-contact').click(function(){
+          console.log('Adding '+$("#fname").val()+' '+$("#lname").val());          var newContact = '<div class="contact">';
+          newContact += '<h2>'+$("#fname").val()+' '+$("#lname").val()+'</h2>';
+          newContact += '<div class="clickme">Click for description!</div>';
+          newContact += '<div class="desc">'+$('#desc-text').val()+'</div>';
+          $('#cards').append(newContact);
+        });
+
+        $(document).on('click', '.contact div', function(){
+          $(this).toggle();
+          $(this).siblings().toggle();
+        })
+
+      })
+    </script>
+    <link rel="stylesheet" href="styles/style.css">
+  </head>
+  <body>
+    <div id="container">
+        <div id="entry-form">
+          <label>First Name<input id="fname" type="text" value=""></label>
+          <label>Last Name<input id="lname" type="text" value=""></label>
+          <p>Description</p>
+          <textarea id="desc-text"></textarea>
+          <input id="add-contact" type="button" name="submit" value="Add Contact">
+        </div>
+        <div id="cards">
+          <div class="contact">
+            <h2>FirstName LastName</h2>
+            <div class="clickme">Click for description!</div>
+            <div class="desc">A description of firstname lastname</div>
+          </div>
+        </div>
+    </div>
+  </body>
+</html>
