@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" lang="en">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
+  </head>
+  <body>
+    <form action="/add_user" method="post">
+      <label for="email">Email:</label>
+      <input type="text" name="email">
+      {% with errors = get_flashed_messages(category_filter="email_error") %}
+        {% if errors %}
+          {% for error in errors %}
+            <span class="error">{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <br>
+      <label for="first_name">First Name:</label>
+      <input type="text" name="first_name">
+      {% with errors = get_flashed_messages(category_filter="fname_error") %}
+        {% if errors %}
+          {% for error in errors %}
+            <span class="error">{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <br>
+      <label for="last_name">Last Name:</label>
+      <input type="text" name="last_name">
+      {% with errors = get_flashed_messages(category_filter="lname_error") %}
+        {% if errors %}
+          {% for error in errors %}
+            <span class="error">{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <br>
+      <label for="password1">Password:</label>
+      <input type="password" name="password1">
+      {% with errors = get_flashed_messages(category_filter="pwd_error") %}
+        {% if errors %}
+          {% for error in errors %}
+            <span class="error">{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <br>
+      <label for="password2">Confirm Password:</label>
+      <input type="password" name="password2">
+      {% with errors = get_flashed_messages(category_filter="pwd2_error") %}
+        {% if errors %}
+          {% for error in errors %}
+            <span class="error">{{ error }}</span>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+      <br>
+      <input type="submit" name="submit" value="Register">
+      {% with messages = get_flashed_messages(category_filter="success") %}
+        {% if messages %}
+          {% for message in messages %}
+            <p>{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+      {% endwith %}
+    </form>
+  </body>
+</html>
